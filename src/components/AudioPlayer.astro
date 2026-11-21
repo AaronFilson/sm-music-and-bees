@@ -59,7 +59,7 @@ const { tracks = defaultTracks } = Astro.props;
             <span class="text-xs font-mono text-stone-400">{track.duration}</span>
           )}
         </div>
-        <audio controls class="w-full h-8 mt-2" preload="none">
+        <audio controls class="w-full h-9 mt-2" preload="none" aria-label={track.title}>
           <source src={track.src} type="audio/mpeg" />
           Your browser does not support the audio element.
         </audio>
@@ -67,3 +67,19 @@ const { tracks = defaultTracks } = Astro.props;
     ))}
   </div>
 </div>
+
+<script>
+  document.addEventListener(
+    'play',
+    (event) => {
+      if (event.target instanceof HTMLAudioElement) {
+        document.querySelectorAll('audio').forEach((audio) => {
+          if (audio !== event.target && !audio.paused) {
+            audio.pause();
+          }
+        });
+      }
+    },
+    true
+  );
+</script>

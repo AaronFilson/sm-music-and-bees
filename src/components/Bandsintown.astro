@@ -1,9 +1,9 @@
 ---
 interface Props {
-  artistName?: string;
+  artistId?: string;
 }
 
-const { artistName = "Sweet Marilyn" } = Astro.props;
+const { artistId = "id_15656870" } = Astro.props;
 ---
 
 <div class="bandsintown-widget-container w-full rounded-2xl bg-white p-6 shadow-sm border border-stone-200">
@@ -12,29 +12,36 @@ const { artistName = "Sweet Marilyn" } = Astro.props;
       <h3 class="text-xl font-heading text-slate-900">Upcoming Live Shows</h3>
       <p class="text-xs text-stone-500 font-sans">Synced automatically via Bandsintown</p>
     </div>
-    <span class="inline-flex items-center rounded-full bg-amber-50 px-3 py-1 text-xs font-medium text-amber-700 border border-amber-200">
-      Live Dates
-    </span>
+    <a
+      href="https://www.bandsintown.com/a/15656870"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center rounded-full bg-amber-50 px-3 py-1 text-xs font-medium text-amber-700 border border-amber-200 hover:bg-amber-100 transition font-sans"
+    >
+      Follow on Bandsintown &rarr;
+    </a>
   </div>
 
   <div class="mt-4">
     <!-- Bandsintown official embed -->
-    <script charset="utf-8" src="https://widget.bandsintown.com/main.min.js"></script>
+    <script is:inline async charset="utf-8" src="https://widget.bandsintown.com/main.min.js"></script>
     <a class="bit-widget-initializer"
-       data-artist-name={artistName}
+       data-artist-name={artistId}
        data-auto-style="false"
        data-text-color="#1E293B"
        data-link-color="#C67C26"
+       data-link-text-color="#FFFFFF"
        data-background-color="rgba(0,0,0,0)"
        data-display-limit="6"
+       data-display-start-time="true"
        data-display-past-dates="false"
-       data-display-local-dates="false">
+       data-display-local-dates="false"
+       data-display-play-my-city="true">
     </a>
 
-    <!-- Fallback / Static preview if no upcoming dates currently published in widget -->
     <noscript>
       <div class="py-6 text-center text-sm text-stone-500 font-sans">
-        Enable JavaScript to view live tour dates, or follow Sweet Marilyn on <a href="https://www.bandsintown.com/a/15535747-sweet-marilyn" target="_blank" class="underline text-amber-600">Bandsintown</a>.
+        Enable JavaScript to view live tour dates, or follow Sweet Marilyn on <a href="https://www.bandsintown.com/a/15656870" target="_blank" rel="noopener noreferrer" class="underline text-amber-600">Bandsintown</a>.
       </div>
     </noscript>
   </div>

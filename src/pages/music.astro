@@ -20,7 +20,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
     <!-- Live Tour Dates Inset -->
     <section class="mb-14">
-      <Bandsintown artistName="Sweet Marilyn" />
+      <Bandsintown />
     </section>
 
     <!-- Bandcamp Releases Grid -->
@@ -35,9 +35,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           <h3 class="text-lg font-heading text-slate-900 mb-2">Hidden Springs</h3>
           <p class="text-xs text-stone-500 font-sans mb-4">Released 2024 • Studio EP</p>
           <iframe
-            style="border: 0; width: 100%; height: 350px;"
+            title="Hidden Springs by Sweet Marilyn on Bandcamp"
+            loading="lazy"
+            class="border-0 w-full h-[350px]"
             src="https://bandcamp.com/EmbeddedPlayer/album=2109830179/size=large/bgcol=ffffff/linkcol=C67C26/tracklist=true/transparent=true/"
-            seamless
           >
             <a href="https://sweetmarilyn.bandcamp.com/album/hidden-springs">Hidden Springs by Sweet Marilyn</a>
           </iframe>
@@ -47,9 +48,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           <h3 class="text-lg font-heading text-slate-900 mb-2">Live at Cider and Cedar</h3>
           <p class="text-xs text-stone-500 font-sans mb-4">Released 2025 • Live Concert Recording</p>
           <iframe
-            style="border: 0; width: 100%; height: 350px;"
+            title="Live at Cider and Cedar by Sweet Marilyn on Bandcamp"
+            loading="lazy"
+            class="border-0 w-full h-[350px]"
             src="https://bandcamp.com/EmbeddedPlayer/album=91042147/size=large/bgcol=ffffff/linkcol=C67C26/tracklist=true/transparent=true/"
-            seamless
           >
             <a href="https://sweetmarilyn.bandcamp.com/album/live-at-cider-and-cedar">Live at Cider and Cedar by Sweet Marilyn</a>
           </iframe>
@@ -69,10 +71,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <p class="text-xs text-stone-500 font-sans mb-6">Official music video by Sweet Marilyn</p>
         <div class="aspect-video w-full overflow-hidden rounded-xl bg-black">
           <iframe
-            class="h-full w-full"
+            class="h-full w-full border-0"
+            loading="lazy"
             src="https://www.youtube.com/embed/0q1E-IzC7QU"
             title="Sweet Marilyn - Aliens Official Video"
-            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           ></iframe>

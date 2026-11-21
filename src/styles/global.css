@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "tailwindcss";
 
 @font-face {
   font-family: 'Black Rock';
@@ -6,6 +6,22 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+
+@theme {
+  --font-heading: "Black Rock", Georgia, serif;
+  --font-serif: "PT Serif", Georgia, serif;
+  --font-sans: Inter, system-ui, -apple-system, sans-serif;
+
+  --color-amber-50: #fdfbf7;
+  --color-amber-100: #f9f3e9;
+  --color-amber-200: #f2e4cf;
+  --color-amber-500: #d9822b;
+  --color-amber-600: #c67c26;
+  --color-amber-700: #a35f18;
+
+  --color-slate-850: #151c28;
+  --color-slate-950: #0c111a;
 }
 
 :root {
@@ -23,9 +39,4 @@ html {
 h1, h2, h3, .font-heading {
   font-family: 'Black Rock', 'PT Serif', Georgia, serif;
   letter-spacing: -0.01em;
-}
-
-/* Custom audio player styles */
-audio {
-  filter: sepia(20%) saturate(120%) hue-rotate(350deg);
 }

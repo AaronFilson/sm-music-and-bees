@@ -51,18 +51,26 @@ import beekeeperHive from '../assets/images/beekeeper_hive.jpg';
             alt="Sweet Marilyn - Jade Monroe"
             class="hero-img h-full w-full object-cover object-center transition duration-500"
             src={bandPortrait1}
+            widths={[480, 800]}
+            sizes="(max-width: 1024px) 100vw, 480px"
+            loading="eager"
+            fetchpriority="high"
           />
           <Image
             id="hero-img-music"
             alt="Sweet Marilyn Live"
             class="hero-img hidden h-full w-full object-cover object-center transition duration-500"
             src={bandPortrait2}
+            widths={[480, 800]}
+            sizes="(max-width: 1024px) 100vw, 480px"
           />
           <Image
             id="hero-img-honey"
             alt="Jade Monroe Beekeeper"
             class="hero-img hidden h-full w-full object-cover object-center transition duration-500"
             src={beekeeperPortrait}
+            widths={[480, 800]}
+            sizes="(max-width: 1024px) 100vw, 480px"
           />
           <div id="hero-badge" class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full font-sans">
             Jade Monroe • Musician &amp; Beekeeper
@@ -75,9 +83,9 @@ import beekeeperHive from '../assets/images/beekeeper_hive.jpg';
           Tacoma, Washington
         </span>
 
-        <h2 id="hero-title" class="mt-2 text-4xl font-normal leading-tight tracking-tight text-slate-900 sm:text-5xl font-heading">
+        <h1 id="hero-title" class="mt-2 text-4xl font-normal leading-tight tracking-tight text-slate-900 sm:text-5xl font-heading">
           Hello &amp; Welcome
-        </h2>
+        </h1>
 
         <div id="hero-text-all" class="hero-text mt-6 space-y-4 text-base leading-relaxed text-stone-700 font-serif">
           <p>
@@ -152,16 +160,17 @@ import beekeeperHive from '../assets/images/beekeeper_hive.jpg';
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <AudioPlayer />
-        <Bandsintown artistName="Sweet Marilyn" />
+        <Bandsintown />
       </div>
 
       <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm">
           <h3 class="text-lg font-heading text-slate-900 mb-2">Hidden Springs (Bandcamp Album)</h3>
           <iframe
-            style="border: 0; width: 100%; height: 120px;"
+            title="Hidden Springs by Sweet Marilyn on Bandcamp"
+            loading="lazy"
+            class="border-0 w-full h-[120px]"
             src="https://bandcamp.com/EmbeddedPlayer/album=2109830179/size=large/bgcol=ffffff/linkcol=C67C26/tracklist=false/artwork=small/transparent=true/"
-            seamless
           >
             <a href="https://sweetmarilyn.bandcamp.com/album/hidden-springs">Hidden Springs by Sweet Marilyn</a>
           </iframe>
@@ -171,10 +180,11 @@ import beekeeperHive from '../assets/images/beekeeper_hive.jpg';
           <h3 class="text-lg font-heading text-slate-900 mb-2">&ldquo;Aliens&rdquo; Music Video</h3>
           <div class="aspect-video w-full rounded-xl overflow-hidden bg-black">
             <iframe
-              class="w-full h-full"
+              class="w-full h-full border-0"
+              loading="lazy"
               src="https://www.youtube.com/embed/0q1E-IzC7QU"
-              title="Aliens Video"
-              frameborder="0"
+              title="Sweet Marilyn - Aliens Official Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             ></iframe>
           </div>

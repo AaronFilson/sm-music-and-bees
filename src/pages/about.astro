@@ -19,7 +19,14 @@ import beekeeperHive from '../assets/images/beekeeper_hive.jpg';
     <!-- Main Bio Article -->
     <article class="bg-white p-8 sm:p-12 rounded-2xl border border-stone-200 shadow-sm space-y-6 text-stone-700 font-serif text-lg leading-relaxed">
       <div class="aspect-[16/9] w-full overflow-hidden rounded-xl bg-stone-100 mb-8">
-        <Image src={bandPortrait2} alt="Sweet Marilyn" class="w-full h-full object-cover object-top" />
+        <Image
+          src={bandPortrait2}
+          widths={[640, 1024]}
+          sizes="(max-width: 896px) 100vw, 800px"
+          loading="eager"
+          alt="Sweet Marilyn"
+          class="w-full h-full object-cover object-top"
+        />
       </div>
 
       <h2 class="text-3xl font-heading text-slate-900 pt-2">Two Disciplines, One Creative Ecosystem</h2>
@@ -46,10 +53,22 @@ import beekeeperHive from '../assets/images/beekeeper_hive.jpg';
       <!-- Photos Gallery -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6">
         <div class="aspect-[4/3] rounded-xl overflow-hidden bg-stone-100">
-          <Image src={bandGroup3} alt="Sweet Marilyn Band" class="w-full h-full object-cover" />
+          <Image
+            src={bandGroup3}
+            widths={[400, 720]}
+            sizes="(max-width: 640px) 100vw, 400px"
+            alt="Sweet Marilyn Band"
+            class="w-full h-full object-cover"
+          />
         </div>
         <div class="aspect-[4/3] rounded-xl overflow-hidden bg-stone-100">
-          <Image src={beekeeperHive} alt="Beekeeping with Sweet Marilyn" class="w-full h-full object-cover" />
+          <Image
+            src={beekeeperHive}
+            widths={[400, 720]}
+            sizes="(max-width: 640px) 100vw, 400px"
+            alt="Beekeeping with Sweet Marilyn"
+            class="w-full h-full object-cover"
+          />
         </div>
       </div>
     </article>
