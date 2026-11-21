@@ -1,9 +1,12 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 interface Props {
   title: string;
   price: string;
   description: string;
-  image: string;
+  image: ImageMetadata;
   badge?: string;
   buyUrl?: string;
   soldOut?: boolean;
@@ -22,7 +25,7 @@ const {
 
 <div class="product-card flex flex-col overflow-hidden rounded-2xl bg-white border border-stone-200 shadow-sm transition hover:shadow-md">
   <div class="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
-    <img src={image} alt={title} class="h-full w-full object-cover transition duration-300 hover:scale-105" />
+    <Image src={image} alt={title} class="h-full w-full object-cover transition duration-300 hover:scale-105" />
     {badge && (
       <span class="absolute top-3 left-3 rounded-full bg-amber-600/90 backdrop-blur-sm px-3 py-1 text-xs font-medium text-white shadow-sm font-sans">
         {badge}
@@ -44,7 +47,7 @@ const {
     <div class="mt-6 pt-4 border-t border-stone-100">
       {soldOut ? (
         <button disabled class="w-full rounded-lg bg-stone-200 px-4 py-2.5 text-center text-sm font-medium text-stone-500 cursor-not-allowed font-sans">
-          Sold Out • Next Drop Coming
+          Sold Out &bull; Next Drop Coming
         </button>
       ) : (
         <a

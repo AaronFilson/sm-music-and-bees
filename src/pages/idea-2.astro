@@ -1,15 +1,18 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import ClientPreviewBar from '../components/ClientPreviewBar.astro';
 import AudioPlayer from '../components/AudioPlayer.astro';
 import Bandsintown from '../components/Bandsintown.astro';
 import SquareProduct from '../components/SquareProduct.astro';
 
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+import bandPortrait1 from '../assets/images/band_portrait_1.jpg';
+import bandPortrait2 from '../assets/images/band_portrait_2.jpg';
+import beekeeperPortrait from '../assets/images/beekeeper_portrait.jpg';
+import honeyJar from '../assets/images/honey_jar.jpg';
+import beekeeperHive from '../assets/images/beekeeper_hive.jpg';
 ---
 
-<Layout title="Idea 2: The Mode Switcher | Sweet Marilyn Design Concepts">
-  <ClientPreviewBar currentIdea="2" />
+<Layout title="Idea 2: The Mode Switcher | Sweet Marilyn Design Concepts" previewIdea="2">
 
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -43,23 +46,23 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <section class="grid grid-cols-1 gap-10 py-8 lg:grid-cols-12 lg:items-center lg:gap-14 border-b border-stone-200 pb-14 transition-all duration-300">
       <div class="lg:col-span-5">
         <div class="aspect-[4/5] overflow-hidden rounded-2xl bg-stone-100 shadow-sm border border-stone-200 relative">
-          <img
+          <Image
             id="hero-img-all"
             alt="Sweet Marilyn - Jade Monroe"
             class="hero-img h-full w-full object-cover object-center transition duration-500"
-            src={`${base}/images/band_portrait_1.jpg`}
+            src={bandPortrait1}
           />
-          <img
+          <Image
             id="hero-img-music"
             alt="Sweet Marilyn Live"
             class="hero-img hidden h-full w-full object-cover object-center transition duration-500"
-            src={`${base}/images/band_portrait_2.jpg`}
+            src={bandPortrait2}
           />
-          <img
+          <Image
             id="hero-img-honey"
             alt="Jade Monroe Beekeeper"
             class="hero-img hidden h-full w-full object-cover object-center transition duration-500"
-            src={`${base}/images/beekeeper_portrait.jpg`}
+            src={beekeeperPortrait}
           />
           <div id="hero-badge" class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full font-sans">
             Jade Monroe • Musician &amp; Beekeeper
@@ -194,7 +197,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           title="6 oz Raw Honey Jar"
           price="$30.00"
           description="Single-harvest, unfiltered Pacific Northwest wildflower and blackberry honey. Hand-spun in small seasonal batches."
-          image={`${base}/images/honey_jar.jpg`}
+          image={honeyJar}
           badge="Limited Drop"
           buyUrl="https://sweetmarilyn.square.site/"
         />
@@ -203,7 +206,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           title="Holiday Bee Box"
           price="$55.00"
           description="Curated winter gift set including our seasonal honey jar, handcrafted beeswax tea lights, and a digital album download code."
-          image={`${base}/images/beekeeper_hive.jpg`}
+          image={beekeeperHive}
           badge="Seasonal Release"
           buyUrl="https://sweetmarilyn.square.site/"
         />
@@ -212,7 +215,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           title="Tacoma Hive Tour"
           price="$75.00"
           description="Suit up and join Jade for a 90-minute live hive inspection. Includes protective gear, honey tasting flight, and pollinator ecology discussion."
-          image={`${base}/images/beekeeper_portrait.jpg`}
+          image={beekeeperPortrait}
           badge="Workshop"
           buyUrl="https://sweetmarilyn.square.site/"
         />

@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import SquareProduct from '../components/SquareProduct.astro';
 
+import beekeeperPortrait from '../assets/images/beekeeper_portrait.jpg';
+import liveStage from '../assets/images/live_stage.jpg';
+
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
@@ -23,7 +26,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         title="Hive Inspection & Honey Tasting"
         price="$75.00 / person"
         description="A 90-minute intimate experience. Includes protective bee suit gear, guided live hive inspection, educational talk on pollinator ecology, and a flight of raw seasonal honeys."
-        image={`${base}/images/beekeeper_portrait.jpg`}
+        image={beekeeperPortrait}
         badge="Small Group (Max 6)"
         buyUrl="https://sweetmarilyn.square.site/"
       />
@@ -32,7 +35,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         title="Garden Concert & Tasting Evening"
         price="$45.00 / ticket"
         description="An evening of acoustic music by Sweet Marilyn in a private garden setting, accompanied by artisanal honey-paired bites and local Pacific Northwest ciders."
-        image={`${base}/images/live_stage.jpg`}
+        image={liveStage}
         badge="Special Event"
         buyUrl="https://sweetmarilyn.square.site/"
       />

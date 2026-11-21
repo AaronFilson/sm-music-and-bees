@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'Black Rock';
-  src: url('/fonts/black-rock.woff2') format('woff2');
+  src: url('../assets/fonts/black-rock.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
