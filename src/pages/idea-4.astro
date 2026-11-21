@@ -1,0 +1,346 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import AudioPlayer from '../components/AudioPlayer.astro';
+import Bandsintown from '../components/Bandsintown.astro';
+import SquareProduct from '../components/SquareProduct.astro';
+
+import heroBg from '../assets/images/live_stage.jpg';
+import honeyJar from '../assets/images/honey_jar.jpg';
+import beekeeperHive from '../assets/images/beekeeper_hive.jpg';
+import beekeeperPortrait from '../assets/images/beekeeper_portrait.jpg';
+import jadePortrait from '../assets/images/jade_monroe_portrait.jpg';
+import logoImg from '../assets/images/logo.png';
+---
+
+<Layout
+  title="Sweet Marilyn"
+  description="Sweet Marilyn — Art rock and raw urban honey from Tacoma, Washington."
+  previewIdea="4"
+  minimalChrome={true}
+>
+  <!-- Sleek Minimal Hero: No top menu, just "Sweet Marilyn", background photo, and Music / Honey buttons -->
+  <section id="top" class="relative min-h-[88vh] sm:min-h-[92vh] w-full flex flex-col justify-between overflow-hidden bg-slate-950 text-white">
+    <!-- Full-bleed Mountain & Honey Jar Background -->
+    <Image
+      src={heroBg}
+      widths={[768, 1280, 1866]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+      alt="Sweet Marilyn raw wildflower honey held against Pacific Northwest mountains"
+      class="absolute inset-0 h-full w-full object-cover object-center scale-[1.01]"
+    />
+    <!-- Subtle editorial gradient scrim for legibility while keeping the jar & peaks vivid -->
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/25 to-slate-950/75"></div>
+
+    <!-- Top Title Only — No Subtext, No Menu -->
+    <div class="relative z-10 pt-12 sm:pt-16 px-6 text-center">
+      <h1 class="text-5xl sm:text-7xl md:text-8xl font-normal tracking-tight text-white font-heading drop-shadow-[0_2px_16px_rgba(0,0,0,0.45)]">
+        Sweet Marilyn
+      </h1>
+    </div>
+
+    <!-- Bottom-Anchored Minimal Action Buttons: Music & Honey -->
+    <div class="relative z-10 pb-14 sm:pb-20 px-6">
+      <div class="max-w-md mx-auto grid grid-cols-2 gap-4 sm:gap-6 font-sans">
+        <a
+          href="#music"
+          class="group flex items-center justify-center rounded-full bg-white/95 backdrop-blur-md px-6 py-4 text-base sm:text-lg font-semibold tracking-wide text-slate-950 shadow-lg transition duration-200 hover:bg-white hover:scale-[1.02] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        >
+          Music
+        </a>
+        <a
+          href="#honey"
+          class="group flex items-center justify-center rounded-full bg-amber-500/95 backdrop-blur-md px-6 py-4 text-base sm:text-lg font-semibold tracking-wide text-slate-950 shadow-lg transition duration-200 hover:bg-amber-400 hover:scale-[1.02] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
+        >
+          Honey
+        </a>
+      </div>
+
+      <div class="mt-8 text-center">
+        <a
+          href="#music"
+          aria-label="Scroll to content"
+          class="inline-flex items-center justify-center text-white/75 hover:text-white transition"
+        >
+          <svg class="w-6 h-6 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scrollable Single-Page Sections (with clean IDs for QR Code deep-linking) -->
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 divide-y divide-stone-200/90">
+
+    <!-- #music -->
+    <section id="music" class="py-20 sm:py-24 scroll-mt-6 space-y-10">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div>
+          <h2 class="text-4xl sm:text-5xl font-heading text-slate-900">Music</h2>
+          <p class="mt-2 text-base text-stone-600 max-w-xl">
+            Original Pacific Northwest art rock fronted by Jade Monroe—soaring vocals, dynamic guitars, and intimate live broadcasts.
+          </p>
+        </div>
+        <a
+          href="https://sweetmarilyn.bandcamp.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm font-sans font-medium text-amber-700 hover:text-amber-800 transition shrink-0"
+        >
+          Full Bandcamp Discography &rarr;
+        </a>
+      </div>
+
+      <AudioPlayer />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="rounded-2xl bg-white p-6 border border-stone-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <h3 class="text-lg font-heading text-slate-900">Hidden Springs</h3>
+            <p class="text-xs text-stone-500 font-sans mt-0.5 mb-4">2024 Studio EP &bull; Bandcamp</p>
+          </div>
+          <iframe
+            title="Hidden Springs by Sweet Marilyn on Bandcamp"
+            loading="lazy"
+            class="border-0 w-full h-[120px]"
+            src="https://bandcamp.com/EmbeddedPlayer/album=2109830179/size=large/bgcol=ffffff/linkcol=C67C26/tracklist=false/artwork=small/transparent=true/"
+          >
+            <a href="https://sweetmarilyn.bandcamp.com/album/hidden-springs">Hidden Springs by Sweet Marilyn</a>
+          </iframe>
+        </div>
+
+        <div class="rounded-2xl bg-white p-6 border border-stone-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <h3 class="text-lg font-heading text-slate-900">Live at Cider and Cedar</h3>
+            <p class="text-xs text-stone-500 font-sans mt-0.5 mb-4">2025 Live Recording &bull; Bandcamp</p>
+          </div>
+          <iframe
+            title="Live at Cider and Cedar by Sweet Marilyn on Bandcamp"
+            loading="lazy"
+            class="border-0 w-full h-[120px]"
+            src="https://bandcamp.com/EmbeddedPlayer/album=91042147/size=large/bgcol=ffffff/linkcol=C67C26/tracklist=false/artwork=small/transparent=true/"
+          >
+            <a href="https://sweetmarilyn.bandcamp.com/album/live-at-cider-and-cedar">Live at Cider and Cedar by Sweet Marilyn</a>
+          </iframe>
+        </div>
+      </div>
+
+      <div class="rounded-2xl bg-white p-6 sm:p-8 border border-stone-200 shadow-sm">
+        <div class="flex items-baseline justify-between mb-4">
+          <h3 class="text-xl font-heading text-slate-900">&ldquo;Aliens&rdquo; Official Video</h3>
+          <span class="text-xs font-sans text-stone-400">YouTube</span>
+        </div>
+        <div class="aspect-video w-full overflow-hidden rounded-xl bg-black">
+          <iframe
+            class="h-full w-full border-0"
+            loading="lazy"
+            src="https://www.youtube.com/embed/0q1E-IzC7QU"
+            title="Sweet Marilyn - Aliens Official Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- #shows -->
+    <section id="shows" class="py-20 sm:py-24 scroll-mt-6 space-y-8">
+      <div>
+        <h2 class="text-4xl sm:text-5xl font-heading text-slate-900">Live Shows</h2>
+        <p class="mt-2 text-base text-stone-600">
+          Upcoming dates and show requests via Bandsintown.
+        </p>
+      </div>
+
+      <Bandsintown />
+    </section>
+
+    <!-- #honey -->
+    <section id="honey" class="py-20 sm:py-24 scroll-mt-6 space-y-10">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div>
+          <h2 class="text-4xl sm:text-5xl font-heading text-slate-900">Honey</h2>
+          <p class="mt-2 text-base text-stone-600 max-w-xl">
+            Raw, unfiltered, treatment-free wildflower honey harvested in small seasonal batches from Tacoma neighborhood hives.
+          </p>
+        </div>
+        <span class="text-xs font-sans uppercase tracking-widest text-amber-700 font-semibold shrink-0">
+          Square Checkout
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <SquareProduct
+          title="6 oz Raw Honey Jar"
+          price="$30.00"
+          description="Single-harvest Pacific Northwest wildflower and blackberry honey. Unpasteurized, gently strained, and bottled in Tacoma."
+          image={honeyJar}
+          badge="Small Batch"
+          buyUrl="https://sweetmarilyn.square.site/"
+        />
+
+        <SquareProduct
+          title="Holiday Bee Box"
+          price="$55.00"
+          description="Seasonal gift box pairing raw autumn honey, pure beeswax tea lights, and a digital album download card."
+          image={beekeeperPortrait}
+          badge="Seasonal Box"
+          buyUrl="https://sweetmarilyn.square.site/"
+        />
+      </div>
+    </section>
+
+    <!-- #experiences -->
+    <section id="experiences" class="py-20 sm:py-24 scroll-mt-6 space-y-10">
+      <div>
+        <h2 class="text-4xl sm:text-5xl font-heading text-slate-900">Experiences</h2>
+        <p class="mt-2 text-base text-stone-600 max-w-xl">
+          Intimate Tacoma hive inspections, comb tastings, and acoustic garden evenings.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <SquareProduct
+          title="Hive Inspection & Honey Tasting"
+          price="$75.00 / person"
+          description="90-minute guided hive visit with protective bee suit gear, pollinator ecology talk, and a flight of raw seasonal honeys."
+          image={beekeeperHive}
+          badge="Max 6 Guests"
+          buyUrl="https://sweetmarilyn.square.site/"
+        />
+
+        <SquareProduct
+          title="Garden Concert & Tasting"
+          price="$45.00 / ticket"
+          description="An acoustic outdoor performance by Sweet Marilyn paired with seasonal honey tastings and local Pacific Northwest ciders."
+          image={heroBg}
+          badge="Live Gathering"
+          buyUrl="https://sweetmarilyn.square.site/"
+        />
+      </div>
+    </section>
+
+    <!-- #about -->
+    <section id="about" class="py-20 sm:py-24 scroll-mt-6">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+        <figure class="md:col-span-5 max-w-sm mx-auto w-full">
+          <div class="aspect-[3/4] w-full overflow-hidden rounded-2xl bg-stone-100 border border-stone-200 shadow-sm">
+            <Image
+              src={jadePortrait}
+              widths={[480, 800]}
+              sizes="(max-width: 768px) 384px, 360px"
+              alt="Jade Monroe at Port Wilson Lighthouse"
+              class="w-full h-full object-cover object-center"
+            />
+          </div>
+          <figcaption class="mt-2 text-xs text-stone-400 font-sans text-center">
+            Jade Monroe &bull; Photo by @scios.photo
+          </figcaption>
+        </figure>
+
+        <div class="md:col-span-7 space-y-6">
+          <h2 class="text-4xl sm:text-5xl font-heading text-slate-900">About</h2>
+          <p class="text-base sm:text-lg text-stone-700 leading-relaxed">
+            <strong>Sweet Marilyn</strong> is the creative home of Tacoma songwriter and urban beekeeper <strong>Jade Monroe</strong>. Whether fronting a roaring indie rock band or tending treatment-free backyard colonies, her work celebrates living frequencies, patience, and Pacific Northwest craft.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <blockquote class="rounded-xl bg-white p-5 border border-stone-200 text-sm italic text-stone-700">
+              &ldquo;Blends sweet hopeful longing with boppin’ indie rock. Leader Jade Monroe packs a punch with a powerful Kate Bush-style howl.&rdquo;
+              <cite class="mt-2 block text-xs font-sans not-italic font-semibold text-stone-400 uppercase tracking-wider">&mdash; Paige Hansen, KNKX</cite>
+            </blockquote>
+            <blockquote class="rounded-xl bg-white p-5 border border-stone-200 text-sm italic text-stone-700">
+              &ldquo;The kind of honey that reminds you what real honey is supposed to taste like.&rdquo;
+              <cite class="mt-2 block text-xs font-sans not-italic font-semibold text-stone-400 uppercase tracking-wider">&mdash; Nathe Lawver</cite>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- #contact -->
+    <section id="contact" class="py-20 sm:py-24 scroll-mt-6">
+      <div class="rounded-3xl bg-white p-8 sm:p-12 border border-stone-200 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-5 space-y-4">
+          <h2 class="text-4xl font-heading text-slate-900">Contact</h2>
+          <p class="text-sm sm:text-base text-stone-600 leading-relaxed">
+            For show bookings, seasonal honey drops, wholesale inquiries, or private hive tours in Tacoma, WA.
+          </p>
+          <p class="pt-2 font-sans text-sm">
+            <a href="mailto:info@sweetmarilyn.org" class="font-semibold text-amber-700 hover:underline">
+              info@sweetmarilyn.org
+            </a>
+          </p>
+        </div>
+
+        <form action="mailto:info@sweetmarilyn.org" method="post" enctype="text/plain" class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 font-sans">
+          <div>
+            <label for="min-name" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Name</label>
+            <input
+              type="text"
+              id="min-name"
+              name="name"
+              required
+              placeholder="Jane Doe"
+              class="w-full rounded-xl border border-stone-300 px-4 py-2.5 text-sm text-slate-900 focus:border-amber-600 focus:ring-1 focus:ring-amber-600 outline-none"
+            />
+          </div>
+          <div>
+            <label for="min-email" class="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1">Email</label>
+            <input
+              type="email"
+              id="min-email"
+              name="email"
+              required
+              placeholder="you@example.com"
+              class="w-full rounded-xl border border-stone-300 px-4 py-2.5 text-sm text-slate-900 focus:border-amber-600 focus:ring-1 focus:ring-amber-600 outline-none"
+            />
+          </div>
+          <div class="sm:col-span-2">
+            <button
+              type="submit"
+              class="w-full rounded-xl bg-slate-950 py-3 px-6 text-sm font-semibold text-white transition hover:bg-slate-800 shadow-sm"
+            >
+              Join Mailing List &amp; Updates &rarr;
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Sleek Minimal Footer with Direct Section Heading Jump Links (QR-Code Friendly) -->
+  <footer class="border-t border-stone-200 bg-stone-100 py-14 px-6">
+    <div class="max-w-5xl mx-auto flex flex-col gap-10">
+      <!-- Section Jump Links (QR Code Anchor Directory) -->
+      <nav aria-label="Section jump links" class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-sans font-medium text-slate-700">
+        <a href="#top" class="hover:text-amber-700 transition">Top</a>
+        <a href="#music" class="hover:text-amber-700 transition">Music</a>
+        <a href="#shows" class="hover:text-amber-700 transition">Live Shows</a>
+        <a href="#honey" class="hover:text-amber-700 transition">Honey</a>
+        <a href="#experiences" class="hover:text-amber-700 transition">Experiences</a>
+        <a href="#about" class="hover:text-amber-700 transition">About</a>
+        <a href="#contact" class="hover:text-amber-700 transition">Contact</a>
+      </nav>
+
+      <div class="border-t border-stone-200/80 pt-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+        <a href="#top" class="inline-flex items-center gap-3 hover:opacity-90 transition">
+          <Image src={logoImg} width={160} alt="Sweet Marilyn Icon" class="h-10 w-auto" />
+          <span class="text-xl font-heading text-slate-900">Sweet Marilyn</span>
+        </a>
+
+        <div class="flex flex-wrap items-center justify-center gap-6 text-xs font-sans text-stone-500">
+          <a href="https://sweetmarilyn.bandcamp.com/" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 transition">Bandcamp</a>
+          <a href="https://www.instagram.com/sweetmarilyn.xo/" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 transition">Instagram</a>
+          <a href="https://www.youtube.com/@SweetMarilyn-xoxo" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 transition">YouTube</a>
+          <a href="https://www.facebook.com/SweetMarilyn.xo" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 transition">Facebook</a>
+          <span>&copy; {new Date().getFullYear()} Sweet Marilyn</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</Layout>

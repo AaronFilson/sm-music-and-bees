@@ -11,10 +11,11 @@ Static website redesign for **Sweet Marilyn** (Tacoma, WA songwriter and sustain
   - **Bandcamp** embedded album players (*Hidden Springs* & *Live at Cider and Cedar*)
   - **Direct HTML5 Audio** master recordings with mutual-exclusion playback
   - **Square** checkout links for honey drops, seasonal bee boxes, and apiary workshops
-- **3 Client Design Concepts:**
+- **4 Initial Design Options:**
   - `/idea-1` — **Dual-Pillar Architecture** (Brady McCowan 2-column split)
   - `/idea-2` — **Hive & Stage Mode Switcher** (interactive Harmonized / Music / Honey filter)
   - `/idea-3` — **Resonance & Nectar** (unified 4-part editorial narrative)
+  - `/idea-4` — **Sleek Minimal** (menu-free full-bleed hero with Music & Honey actions and QR-ready section anchors)
   - Includes an optional **"Show on subpages"** slider toggle in the presentation bar so subpages stay distraction-free by default.
 
 ## Local Development

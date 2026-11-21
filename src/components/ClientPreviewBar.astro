@@ -1,6 +1,6 @@
 ---
 interface Props {
-  currentIdea?: '1' | '2' | '3';
+  currentIdea?: '1' | '2' | '3' | '4';
   isSubpage?: boolean;
 }
 
@@ -15,12 +15,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 >
   <div class="flex items-center gap-2">
     <span class="inline-block w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
-    <span class="font-bold text-amber-300 uppercase tracking-wider">Client Presentation Mode:</span>
-    <span class="text-stone-300 hidden md:inline">Compare the 3 approaches to harmonize Bees &amp; Music</span>
+    <span class="font-bold text-amber-300 uppercase tracking-wider">Initial options presentation mode</span>
   </div>
 
   <div class="flex flex-wrap items-center gap-3">
-    <div class="flex items-center gap-1.5 bg-slate-800 p-1 rounded-lg border border-slate-700">
+    <div class="flex flex-wrap items-center gap-1.5 bg-slate-800 p-1 rounded-lg border border-slate-700">
       <a
         href={`${base}/idea-1`}
         class={`px-3 py-1 rounded-md transition font-medium ${currentIdea === '1' ? 'bg-amber-600 text-white font-bold' : 'text-stone-300 hover:text-white hover:bg-slate-700'}`}
@@ -38,6 +37,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         class={`px-3 py-1 rounded-md transition font-medium ${currentIdea === '3' ? 'bg-amber-600 text-white font-bold' : 'text-stone-300 hover:text-white hover:bg-slate-700'}`}
       >
         Idea 3: Resonance &amp; Nectar
+      </a>
+      <a
+        href={`${base}/idea-4`}
+        class={`px-3 py-1 rounded-md transition font-medium ${currentIdea === '4' ? 'bg-amber-600 text-white font-bold' : 'text-stone-300 hover:text-white hover:bg-slate-700'}`}
+      >
+        Idea 4: Sleek Minimal
       </a>
     </div>
 
