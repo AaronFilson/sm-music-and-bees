@@ -1,0 +1,161 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ClientPreviewBar from '../components/ClientPreviewBar.astro';
+import AudioPlayer from '../components/AudioPlayer.astro';
+import Bandsintown from '../components/Bandsintown.astro';
+import SquareProduct from '../components/SquareProduct.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout title="Idea 3: Resonance & Nectar | Sweet Marilyn Design Concepts">
+  <ClientPreviewBar currentIdea="3" />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Concept Explanation Header -->
+    <div class="mt-6 mb-8 rounded-xl bg-amber-50/90 border border-amber-300 p-4 text-xs font-sans text-stone-700 flex flex-col md:flex-row md:items-center justify-between gap-3">
+      <div>
+        <span class="font-bold text-amber-900 uppercase tracking-wide">Design Concept 3: The Unified Sensory Narrative (&ldquo;Resonance &amp; Nectar&rdquo;)</span>
+        <p class="text-stone-600 mt-0.5">Editorial storytelling approach: Weaves sound frequencies and hive life into a single cohesive artistic ecosystem instead of separating them.</p>
+      </div>
+      <span class="px-2.5 py-1 rounded bg-amber-200 text-amber-950 font-semibold text-[11px] self-start md:self-auto">
+        Editorial &amp; Poetic
+      </span>
+    </div>
+
+    <!-- Editorial Hero -->
+    <section class="py-12 text-center max-w-2xl mx-auto border-b border-stone-200 pb-16">
+      <span class="text-xs uppercase tracking-widest text-amber-700 font-sans font-semibold">
+        Acoustic Frequency &bull; Botanical Cultivation
+      </span>
+      <h1 class="text-4xl sm:text-6xl font-normal tracking-tight text-slate-900 mt-3 font-heading">
+        Resonance &amp; Nectar
+      </h1>
+      <p class="mt-6 text-lg sm:text-xl font-serif text-stone-700 italic leading-relaxed">
+        &ldquo;Bees communicate through frequencies—the hive hums at 250 Hz. Music is organized frequency. Sweet Marilyn is the sonic and botanical harvest of Jade Monroe in Tacoma, Washington.&rdquo;
+      </p>
+
+      <div class="mt-8 flex justify-center gap-4 font-sans text-sm font-medium">
+        <a href="#movement-1" class="rounded-lg bg-slate-900 px-6 py-3 text-white transition hover:bg-slate-800 shadow-sm">
+          Listen to the Sound &rarr;
+        </a>
+        <a href="#movement-2" class="rounded-lg border border-amber-600/40 bg-amber-50 px-6 py-3 text-amber-900 transition hover:bg-amber-100 shadow-sm">
+          Explore the Harvest &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- Narrative Section 1: The Acoustic Frequency -->
+    <section id="movement-1" class="py-14 space-y-8 border-b border-stone-200">
+      <div class="flex items-center gap-3">
+        <span class="text-xs font-mono font-bold text-amber-700 bg-amber-100 px-2.5 py-1 rounded-full">Part I</span>
+        <h2 class="text-3xl font-heading text-slate-900">The Acoustic Frequency</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <div class="md:col-span-5 aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100 border border-stone-200">
+          <img src={`${base}/images/band_portrait_1.jpg`} alt="Jade Monroe" class="w-full h-full object-cover" />
+        </div>
+        <div class="md:col-span-7 space-y-4 font-serif text-stone-700 leading-relaxed">
+          <p>
+            Sweet Marilyn is guitar-driven indie art rock fronted by Jade Monroe. Characterized by sudden dynamic shifts, soaring hooks, and an emotive vocal delivery described by KNKX as a <em>&ldquo;powerful Kate Bush-style howl.&rdquo;</em>
+          </p>
+          <p>
+            Our recordings reflect live room acoustics, unhurried songwriting, and lyrical portraits of Northwest waterways and seasonal shifts.
+          </p>
+        </div>
+      </div>
+
+      <AudioPlayer />
+
+      <div class="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
+        <h3 class="text-lg font-heading text-slate-900 mb-2">Hidden Springs (Bandcamp)</h3>
+        <iframe
+          style="border: 0; width: 100%; height: 120px;"
+          src="https://bandcamp.com/EmbeddedPlayer/album=2109830179/size=large/bgcol=ffffff/linkcol=C67C26/tracklist=false/artwork=small/transparent=true/"
+          seamless
+        >
+          <a href="https://sweetmarilyn.bandcamp.com/album/hidden-springs">Hidden Springs by Sweet Marilyn</a>
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Narrative Section 2: The Living Colony -->
+    <section id="movement-2" class="py-14 space-y-8 border-b border-stone-200">
+      <div class="flex items-center gap-3">
+        <span class="text-xs font-mono font-bold text-amber-700 bg-amber-100 px-2.5 py-1 rounded-full">Part II</span>
+        <h2 class="text-3xl font-heading text-slate-900">The Living Colony</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <div class="md:col-span-7 space-y-4 font-serif text-stone-700 leading-relaxed order-2 md:order-1">
+          <p>
+            Parallel to rehearsals and studio sessions, Monroe manages treatment-free backyard apiaries in Pierce County. The bees forage across Tacoma’s urban floral landscape: Himalayan blackberry brambles, Douglas fir honeydew, neighborhood linden trees, and wild clover.
+          </p>
+          <p>
+            We practice respectful, non-industrial beekeeping: our honey is never heated, never pressure-filtered, and harvested only when the colony has stored an abundance for winter.
+          </p>
+        </div>
+        <div class="md:col-span-5 aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100 border border-stone-200 order-1 md:order-2">
+          <img src={`${base}/images/beekeeper_hive.jpg`} alt="Jade Monroe at the hive" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Narrative Section 3: The Combined Offerings (Square Store) -->
+    <section class="py-14 space-y-8 border-b border-stone-200">
+      <div class="flex items-center justify-between pb-3 border-b border-stone-200">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-mono font-bold text-amber-700 bg-amber-100 px-2.5 py-1 rounded-full">Part III</span>
+          <h2 class="text-3xl font-heading text-slate-900">The Harvest &amp; Curated Store</h2>
+        </div>
+        <span class="text-xs font-sans text-stone-500">Square Checkout</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <SquareProduct
+          title="6 oz Raw Wildflower Honey"
+          price="$30.00"
+          description="Single-harvest, raw Tacoma honey hand-spun in small batches. Deep amber with notes of blackberry bloom."
+          image={`${base}/images/honey_jar.jpg`}
+          badge="Limited Drop"
+          buyUrl="https://sweetmarilyn.square.site/"
+        />
+
+        <SquareProduct
+          title="Sound &amp; Sweetness Bundle"
+          price="$60.00"
+          description="The complete Sweet Marilyn pairing: 6 oz honey jar, handcrafted beeswax tea lights, and a digital album download card."
+          image={`${base}/images/beekeeper_portrait.jpg`}
+          badge="Curated Pairing"
+          buyUrl="https://sweetmarilyn.square.site/"
+        />
+
+        <SquareProduct
+          title="Hive Tour &amp; Tasting"
+          price="$75.00"
+          description="Step into a bee suit and join Jade for an intimate 90-minute live hive inspection and honey tasting in Tacoma."
+          image={`${base}/images/live_stage.jpg`}
+          badge="Live Experience"
+          buyUrl="https://sweetmarilyn.square.site/"
+        />
+      </div>
+    </section>
+
+    <!-- Narrative Section 4: Live Gatherings -->
+    <section class="py-14 space-y-8">
+      <div class="flex items-center gap-3">
+        <span class="text-xs font-mono font-bold text-amber-700 bg-amber-100 px-2.5 py-1 rounded-full">Part IV</span>
+        <h2 class="text-3xl font-heading text-slate-900">Live Gatherings</h2>
+      </div>
+
+      <p class="text-sm text-stone-600 font-serif">
+        Whether on a club stage with full distortion or in a sunlit garden with honey flights, join us in person:
+      </p>
+
+      <Bandsintown artistName="Sweet Marilyn" />
+    </section>
+
+  </div>
+</Layout>

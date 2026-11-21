@@ -1,0 +1,23 @@
+{
+  "name": "sm-music-and-bees",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Sweet Marilyn - Indie rock and raw honey from Tacoma, WA",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AaronFilson/sm-music-and-bees.git"
+  },
+  "author": "Sweet Marilyn",
+  "license": "MIT",
+  "devDependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^7.4.13",
+    "tailwindcss": "^3.4.19"
+  }
+}

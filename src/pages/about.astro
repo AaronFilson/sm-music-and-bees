@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout title="About Sweet Marilyn | Art Rock & Raw Honey" description="Meet Jade Monroe, the musician and beekeeper behind Sweet Marilyn in Tacoma, Washington.">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="text-xs uppercase tracking-widest text-slate-500 font-sans font-semibold">The Story</span>
+      <h1 class="text-4xl sm:text-5xl font-heading text-slate-900 mt-2">About Sweet Marilyn</h1>
+    </div>
+
+    <!-- Main Bio Article -->
+    <article class="bg-white p-8 sm:p-12 rounded-2xl border border-stone-200 shadow-sm space-y-6 text-stone-700 font-serif text-lg leading-relaxed">
+      <div class="aspect-[16/9] w-full overflow-hidden rounded-xl bg-stone-100 mb-8">
+        <img src={`${base}/images/band_portrait_2.jpg`} alt="Sweet Marilyn" class="w-full h-full object-cover object-top" />
+      </div>
+
+      <h2 class="text-3xl font-heading text-slate-900 pt-2">Two Disciplines, One Creative Ecosystem</h2>
+      
+      <p>
+        Sweet Marilyn began as the musical project of Tacoma singer, guitarist, and songwriter <strong>Jade Monroe</strong>. Known for dynamic songwriting that oscillates between gentle folk melodies and roaring art-rock climaxes, Monroe has earned praise across Pacific Northwest radio stations like KNKX and KAOS for her expressive, emotive vocal range.
+      </p>
+
+      <p>
+        Parallel to music, Jade found a second calling in urban apiculture. What started as one backyard hive grew into a dedicated community practice: keeping treatment-free European honeybees, educating neighbors about urban pollinator habitat, and harvesting small batches of raw honey that honor the local ecosystem.
+      </p>
+
+      <div class="my-8 p-6 bg-stone-50 rounded-xl border-l-4 border-amber-600">
+        <p class="italic text-base text-stone-800">
+          &ldquo;Bees work in deep, collective rhythm. A hive vibrates at specific frequencies to communicate, regulate heat, and build honeycomb. To me, music and beekeeping are mirror crafts: they both require active listening, patience, and honoring the frequency of living things.&rdquo;
+        </p>
+        <span class="block text-xs font-sans not-italic font-medium text-stone-500 mt-2 uppercase tracking-wide">&mdash; Jade Monroe</span>
+      </div>
+
+      <p>
+        Today, Sweet Marilyn brings together both passions under one roof. When you purchase Sweet Marilyn honey, attend an apiary tour, or stream our records, you are supporting a self-sustaining, community-rooted artist operating with authenticity in Tacoma, WA.
+      </p>
+
+      <!-- Photos Gallery -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6">
+        <div class="aspect-[4/3] rounded-xl overflow-hidden bg-stone-100">
+          <img src={`${base}/images/band_group_3.jpg`} alt="Sweet Marilyn Band" class="w-full h-full object-cover" />
+        </div>
+        <div class="aspect-[4/3] rounded-xl overflow-hidden bg-stone-100">
+          <img src={`${base}/images/beekeeper_hive.jpg`} alt="Beekeeping with Sweet Marilyn" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </article>
+
+  </div>
+</Layout>

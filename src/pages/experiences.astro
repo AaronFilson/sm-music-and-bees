@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SquareProduct from '../components/SquareProduct.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout title="Experiences & Workshops | Sweet Marilyn" description="Hive inspections, raw honey tastings, and garden workshops hosted by Jade Monroe in Tacoma, WA.">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="text-xs uppercase tracking-widest text-amber-700 font-sans font-semibold">Tours &amp; Workshops</span>
+      <h1 class="text-4xl sm:text-5xl font-heading text-slate-900 mt-2">Apiary Experiences</h1>
+      <p class="mt-4 text-base text-stone-600 font-serif">
+        Step into a beekeeper's suit, look inside a working colony, and taste fresh comb honey directly in Tacoma.
+      </p>
+    </div>
+
+    <!-- Experiences Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-14">
+      <SquareProduct
+        title="Hive Inspection & Honey Tasting"
+        price="$75.00 / person"
+        description="A 90-minute intimate experience. Includes protective bee suit gear, guided live hive inspection, educational talk on pollinator ecology, and a flight of raw seasonal honeys."
+        image={`${base}/images/beekeeper_portrait.jpg`}
+        badge="Small Group (Max 6)"
+        buyUrl="https://sweetmarilyn.square.site/"
+      />
+
+      <SquareProduct
+        title="Garden Concert & Tasting Evening"
+        price="$45.00 / ticket"
+        description="An evening of acoustic music by Sweet Marilyn in a private garden setting, accompanied by artisanal honey-paired bites and local Pacific Northwest ciders."
+        image={`${base}/images/live_stage.jpg`}
+        badge="Special Event"
+        buyUrl="https://sweetmarilyn.square.site/"
+      />
+    </div>
+
+    <!-- Private Group Booking Callout -->
+    <div class="rounded-2xl bg-white p-8 border border-stone-200 shadow-sm text-center">
+      <h2 class="text-2xl font-heading text-slate-900">Custom Group Bookings &amp; Private Classes</h2>
+      <p class="mt-2 text-sm text-stone-600 max-w-lg mx-auto">
+        We host private family hive visits, corporate team experiences, school/community educational visits, and private live music performances.
+      </p>
+      <div class="mt-6">
+        <a href={`${base}/contact`} class="inline-block rounded-lg bg-slate-900 px-6 py-3 text-sm font-medium text-white transition hover:bg-slate-800 font-sans shadow-sm">
+          Inquire About a Private Date &rarr;
+        </a>
+      </div>
+    </div>
+
+  </div>
+</Layout>

@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SquareProduct from '../components/SquareProduct.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout title="The Apiary & Raw Honey | Sweet Marilyn" description="Small-batch, raw, treatment-free urban honey cultivated by Jade Monroe in Tacoma, Washington. Single-harvest wildflower and blackberry honey.">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="text-xs uppercase tracking-widest text-amber-700 font-sans font-semibold">Sustainable Apiculture</span>
+      <h1 class="text-4xl sm:text-5xl font-heading text-slate-900 mt-2">The Apiary &amp; Raw Honey</h1>
+      <p class="mt-4 text-base text-stone-600 font-serif">
+        Pure, unpasteurized, treatment-free honey harvested with care from backyard hives in Tacoma, Washington.
+      </p>
+    </div>
+
+    <!-- Philosophy & Apiary Intro -->
+    <section class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-white p-8 rounded-2xl border border-stone-200 shadow-sm mb-14">
+      <div class="md:col-span-5 aspect-[4/3] rounded-xl overflow-hidden bg-stone-100">
+        <img src={`${base}/images/beekeeper_hive.jpg`} alt="Jade Monroe at the hive" class="w-full h-full object-cover" />
+      </div>
+      <div class="md:col-span-7 space-y-4 text-stone-700 font-serif text-base leading-relaxed">
+        <h2 class="text-2xl font-heading text-slate-900">What Real Honey Tastes Like</h2>
+        <p>
+          Unlike commercial honey that has been heat-pasteurized and ultra-filtered, Sweet Marilyn honey is extracted straight from honeycomb and gently strained to preserve natural pollens, enzymes, and delicate floral terroir.
+        </p>
+        <p>
+          Our hives forage on Himalayan blackberry blossoms, Douglas fir honeydew, lavender, clover, and native Salish Sea flora throughout the Puget Sound spring and summer. Each annual jar release reflects the precise weather, flowers, and personality of that season.
+        </p>
+      </div>
+    </section>
+
+    <!-- Products / Store Grid -->
+    <section class="mb-14">
+      <div class="border-b border-stone-200 pb-4 mb-8 flex justify-between items-end">
+        <div>
+          <h2 class="text-2xl font-heading text-slate-900">Current &amp; Seasonal Releases</h2>
+          <p class="text-xs text-stone-500 font-sans">Secure payment powered by Square</p>
+        </div>
+        <span class="text-xs font-sans font-medium text-amber-700 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
+          Small Batch Production
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <SquareProduct
+          title="6 oz Raw Honey Jar"
+          price="$30.00"
+          description="Single-harvest, unfiltered Pacific Northwest wildflower and blackberry honey. Hand-spun in small seasonal batches with our signature hexagonal label."
+          image={`${base}/images/honey_jar.jpg`}
+          badge="Limited Release"
+          buyUrl="https://sweetmarilyn.square.site/"
+        />
+
+        <SquareProduct
+          title="2026 Holiday Bee Box"
+          price="$55.00"
+          description="Our signature seasonal box featuring a jar of autumn raw honey, 100% pure beeswax tea light candles, and Sweet Marilyn digital music download card."
+          image={`${base}/images/beekeeper_portrait.jpg`}
+          badge="Holiday Special"
+          buyUrl="https://sweetmarilyn.square.site/"
+        />
+      </div>
+    </section>
+
+    <!-- Wholesale / Stockist Callout -->
+    <div class="rounded-2xl bg-amber-50/70 p-8 text-center border border-amber-200/80">
+      <h3 class="text-2xl font-heading text-slate-900">Retail &amp; Wholesale Inquiries</h3>
+      <p class="mt-2 text-sm text-stone-700 max-w-lg mx-auto">
+        Interested in stocking Sweet Marilyn raw honey or collaborating on special culinary/beverage releases in Pierce County?
+      </p>
+      <div class="mt-6">
+        <a href={`${base}/contact`} class="inline-block rounded-lg bg-amber-700 px-6 py-3 text-sm font-medium text-white transition hover:bg-amber-800 font-sans shadow-sm">
+          Contact for Wholesale &rarr;
+        </a>
+      </div>
+    </div>
+
+  </div>
+</Layout>

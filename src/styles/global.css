@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@font-face {
+  font-family: 'Black Rock';
+  src: url('/fonts/black-rock.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-amber-gold: #c67c26;
+  --color-amber-light: #fdfbf7;
+}
+
+html {
+  font-family: 'PT Serif', Georgia, serif;
+  background-color: #faf9f6;
+  color: #1e293b;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, .font-heading {
+  font-family: 'Black Rock', 'PT Serif', Georgia, serif;
+  letter-spacing: -0.01em;
+}
+
+/* Custom audio player styles */
+audio {
+  filter: sepia(20%) saturate(120%) hue-rotate(350deg);
+}

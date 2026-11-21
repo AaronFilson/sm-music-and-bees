@@ -1,0 +1,186 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ClientPreviewBar from '../components/ClientPreviewBar.astro';
+import AudioPlayer from '../components/AudioPlayer.astro';
+import Bandsintown from '../components/Bandsintown.astro';
+import SquareProduct from '../components/SquareProduct.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout title="Idea 1: The Dual-Pillar | Sweet Marilyn Design Concepts">
+  <ClientPreviewBar currentIdea="1" />
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Concept Explanation Header -->
+    <div class="mt-6 mb-8 rounded-xl bg-amber-50/80 border border-amber-200 p-4 text-xs font-sans text-stone-700 flex flex-col md:flex-row md:items-center justify-between gap-3">
+      <div>
+        <span class="font-bold text-amber-800 uppercase tracking-wide">Design Concept 1: The Dual-Pillar Architecture</span>
+        <p class="text-stone-600 mt-0.5">Modeled after Brady McCowan’s site: Clear 2-column hero greeting with dual action paths and parallel music &amp; honey columns.</p>
+      </div>
+      <span class="px-2.5 py-1 rounded bg-amber-200/70 text-amber-900 font-semibold text-[11px] self-start md:self-auto">
+        Recommended for Simplicity
+      </span>
+    </div>
+
+    <!-- Hero Section (Brady McCowan 2-Column Pattern) -->
+    <section class="grid grid-cols-1 gap-10 py-10 lg:grid-cols-12 lg:items-center lg:gap-14 border-b border-stone-200 pb-14">
+      <div class="lg:col-span-5">
+        <div class="aspect-[4/5] overflow-hidden rounded-2xl bg-stone-100 shadow-sm border border-stone-200">
+          <img
+            alt="Jade Monroe - Sweet Marilyn"
+            class="h-full w-full object-cover object-center"
+            src={`${base}/images/band_portrait_1.jpg`}
+          />
+        </div>
+      </div>
+
+      <div class="flex flex-col justify-center lg:col-span-7">
+        <span class="text-xs uppercase tracking-widest text-amber-700 font-sans font-semibold">
+          Tacoma, Washington
+        </span>
+
+        <h2 class="mt-2 text-4xl font-normal leading-tight tracking-tight text-slate-900 sm:text-5xl font-heading">
+          Hello &amp; Welcome
+        </h2>
+
+        <div class="mt-6 space-y-4 text-base leading-relaxed text-stone-700 font-serif">
+          <p>
+            We are <strong>Sweet Marilyn</strong>, an art rock collective and sustainable urban apiary based in Tacoma, Washington, led by songwriter and beekeeper <strong>Jade Monroe</strong>.
+          </p>
+          <p>
+            Our work lives at the intersection of acoustic frequency and natural cultivation: dynamic, guitar-driven indie rock with soaring vocals on stage, and raw, single-source honey harvested from treatment-free neighborhood hives. Both craft requires patience, respect for rhythm, and love for our Pacific Northwest home.
+          </p>
+        </div>
+
+        <!-- Dual Action Buttons -->
+        <div class="mt-8 flex flex-wrap gap-4 font-sans text-sm font-medium">
+          <a
+            class="rounded-lg bg-slate-900 px-6 py-3 text-white transition hover:bg-slate-800 shadow-sm"
+            href="#music-pillar"
+          >
+            Explore the Music &amp; Shows &rarr;
+          </a>
+
+          <a
+            class="rounded-lg border border-amber-600/40 bg-amber-50 px-6 py-3 text-amber-900 transition hover:bg-amber-100/80 shadow-sm"
+            href="#honey-pillar"
+          >
+            The Apiary &amp; Raw Honey &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quotes Bar -->
+    <section class="my-10 border-y border-stone-200 bg-stone-100/60 py-8 px-6 rounded-2xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 divide-y md:divide-y-0 md:divide-x divide-stone-200">
+        <blockquote class="px-4">
+          <p class="text-base italic text-stone-800">
+            &ldquo;Blends sweet hopeful longing with boppin’ indie rock. Leader Jade Monroe packs a punch with a powerful Kate Bush-style howl.&rdquo;
+          </p>
+          <cite class="mt-2 block text-xs font-sans not-italic font-medium text-stone-500 uppercase tracking-wider">
+            &mdash; Paige Hansen, KNKX DJ
+          </cite>
+        </blockquote>
+
+        <blockquote class="px-4 pt-6 md:pt-0">
+          <p class="text-base italic text-stone-800">
+            &ldquo;The kind of honey that reminds you what real honey is supposed to taste like.&rdquo;
+          </p>
+          <cite class="mt-2 block text-xs font-sans not-italic font-medium text-stone-500 uppercase tracking-wider">
+            &mdash; Nathe Lawver, Pierce County Labor Champion
+          </cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Parallel Dual Showcases -->
+    <section class="py-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        
+        <!-- Left Column: The Music Pillar -->
+        <div id="music-pillar" class="space-y-8 scroll-mt-24">
+          <div class="border-b border-stone-200 pb-3">
+            <span class="text-xs font-sans uppercase tracking-widest text-slate-500 font-semibold">Pillar 1: Sound &amp; Stage</span>
+            <h2 class="text-3xl font-heading text-slate-900 mt-1">Live Frequencies</h2>
+            <p class="text-sm text-stone-600 mt-1">Direct stream of recent radio broadcasts and live club sets.</p>
+          </div>
+
+          <AudioPlayer />
+
+          <Bandsintown artistName="Sweet Marilyn" />
+
+          <!-- Bandcamp Callout -->
+          <div class="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
+            <h3 class="text-lg font-heading text-slate-900">Sweet Marilyn on Bandcamp</h3>
+            <p class="text-xs text-stone-500 font-sans mt-1">Stream full albums or purchase digital downloads and merch.</p>
+            <div class="mt-4">
+              <iframe
+                style="border: 0; width: 100%; height: 120px;"
+                src="https://bandcamp.com/EmbeddedPlayer/album=2109830179/size=large/bgcol=ffffff/linkcol=C67C26/tracklist=false/artwork=small/transparent=true/"
+                seamless
+              >
+                <a href="https://sweetmarilyn.bandcamp.com/album/hidden-springs">Hidden Springs by Sweet Marilyn</a>
+              </iframe>
+            </div>
+            <div class="mt-4 text-right">
+              <a href={`${base}/music`} class="text-xs font-sans text-amber-700 hover:underline font-medium">
+                View full discography &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: The Apiary Pillar -->
+        <div id="honey-pillar" class="space-y-8 scroll-mt-24">
+          <div class="border-b border-stone-200 pb-3">
+            <span class="text-xs font-sans uppercase tracking-widest text-amber-700 font-semibold">Pillar 2: The Hive &amp; Harvest</span>
+            <h2 class="text-3xl font-heading text-slate-900 mt-1">Raw Honey &amp; Experiences</h2>
+            <p class="text-sm text-stone-600 mt-1">Unpasteurized, unfiltered honey and live urban apiary workshops.</p>
+          </div>
+
+          <div class="grid grid-cols-1 gap-6">
+            <SquareProduct
+              title="6 oz Raw Honey Jar"
+              price="$30.00"
+              description="Single-harvest, unfiltered Pacific Northwest wildflower and blackberry honey. Hand-spun in small seasonal batches."
+              image={`${base}/images/honey_jar.jpg`}
+              badge="Limited Drop"
+              buyUrl="https://sweetmarilyn.square.site/"
+            />
+
+            <SquareProduct
+              title="Holiday Bee Box"
+              price="$55.00"
+              description="Curated winter gift set including our seasonal honey jar, handcrafted beeswax tea lights, and a digital album download code."
+              image={`${base}/images/beekeeper_hive.jpg`}
+              badge="Seasonal Release"
+              buyUrl="https://sweetmarilyn.square.site/"
+            />
+
+            <!-- Experience Card -->
+            <div class="rounded-2xl border border-stone-200 bg-white p-6 shadow-sm flex flex-col justify-between">
+              <div>
+                <span class="rounded-full bg-stone-100 px-3 py-1 text-xs font-medium text-stone-700 font-sans">Workshop &amp; Tour</span>
+                <h3 class="text-xl font-heading text-slate-900 mt-2">Tacoma Apiary Tour &amp; Honey Tasting</h3>
+                <p class="mt-2 text-sm text-stone-600 leading-relaxed">
+                  Join Jade for a 90-minute intimate hive inspection, taste raw honey straight from the comb, and learn about urban pollinator stewardship in Tacoma.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-stone-100">
+                <a href={`${base}/experiences`} class="block w-full rounded-lg bg-slate-900 px-4 py-2.5 text-center text-sm font-medium text-white transition hover:bg-slate-800 shadow-sm font-sans">
+                  Book an Experience &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+</Layout>

@@ -1,0 +1,69 @@
+---
+interface Track {
+  title: string;
+  subtitle: string;
+  src: string;
+  duration?: string;
+}
+
+interface Props {
+  tracks?: Track[];
+}
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const defaultTracks: Track[] = [
+  {
+    title: "Gardening (LIVE on KAOS 89.3)",
+    subtitle: "Sweet Marilyn • Live Radio Broadcast",
+    src: `${base}/audio/gardening_live_kaos.mp3`,
+    duration: "4:43"
+  },
+  {
+    title: "Year of the Flood",
+    subtitle: "Sweet Marilyn • LIVE at Cider and Cedar",
+    src: `${base}/audio/year_of_the_flood_live.mp3`,
+    duration: "3:44"
+  },
+  {
+    title: "Waves",
+    subtitle: "From Hidden Springs (2024)",
+    src: `${base}/audio/waves_hidden_springs.mp3`,
+    duration: "3:16"
+  }
+];
+
+const { tracks = defaultTracks } = Astro.props;
+---
+
+<div class="audio-player-card w-full rounded-2xl bg-white p-6 shadow-sm border border-stone-200">
+  <div class="flex items-center justify-between pb-4 border-b border-stone-100">
+    <div>
+      <h3 class="text-xl font-heading text-slate-900">Featured Recordings</h3>
+      <p class="text-xs text-stone-500 font-sans">Live broadcasts &amp; studio cuts</p>
+    </div>
+    <span class="inline-flex items-center rounded-full bg-stone-100 px-3 py-1 text-xs font-medium text-stone-700">
+      Direct Audio
+    </span>
+  </div>
+
+  <div class="mt-4 space-y-4">
+    {tracks.map((track) => (
+      <div class="rounded-xl bg-stone-50/80 p-4 border border-stone-200/60 transition hover:bg-stone-50">
+        <div class="flex items-center justify-between mb-2">
+          <div>
+            <h4 class="text-sm font-semibold text-slate-900 font-sans">{track.title}</h4>
+            <p class="text-xs text-stone-500 font-sans">{track.subtitle}</p>
+          </div>
+          {track.duration && (
+            <span class="text-xs font-mono text-stone-400">{track.duration}</span>
+          )}
+        </div>
+        <audio controls class="w-full h-8 mt-2" preload="none">
+          <source src={track.src} type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    ))}
+  </div>
+</div>

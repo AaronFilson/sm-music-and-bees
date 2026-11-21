@@ -1,0 +1,61 @@
+---
+interface Props {
+  title: string;
+  price: string;
+  description: string;
+  image: string;
+  badge?: string;
+  buyUrl?: string;
+  soldOut?: boolean;
+}
+
+const {
+  title,
+  price,
+  description,
+  image,
+  badge = "Small Batch",
+  buyUrl = "https://sweetmarilyn.square.site/",
+  soldOut = false
+} = Astro.props;
+---
+
+<div class="product-card flex flex-col overflow-hidden rounded-2xl bg-white border border-stone-200 shadow-sm transition hover:shadow-md">
+  <div class="relative aspect-[4/3] w-full overflow-hidden bg-stone-100">
+    <img src={image} alt={title} class="h-full w-full object-cover transition duration-300 hover:scale-105" />
+    {badge && (
+      <span class="absolute top-3 left-3 rounded-full bg-amber-600/90 backdrop-blur-sm px-3 py-1 text-xs font-medium text-white shadow-sm font-sans">
+        {badge}
+      </span>
+    )}
+  </div>
+
+  <div class="flex flex-1 flex-col justify-between p-6">
+    <div>
+      <div class="flex items-baseline justify-between">
+        <h3 class="text-xl font-heading text-slate-900">{title}</h3>
+        <span class="text-lg font-semibold text-slate-800 font-sans">{price}</span>
+      </div>
+      <p class="mt-2 text-sm text-stone-600 leading-relaxed font-serif">
+        {description}
+      </p>
+    </div>
+
+    <div class="mt-6 pt-4 border-t border-stone-100">
+      {soldOut ? (
+        <button disabled class="w-full rounded-lg bg-stone-200 px-4 py-2.5 text-center text-sm font-medium text-stone-500 cursor-not-allowed font-sans">
+          Sold Out • Next Drop Coming
+        </button>
+      ) : (
+        <a
+          href={buyUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block w-full rounded-lg bg-amber-600 px-4 py-2.5 text-center text-sm font-medium text-white transition hover:bg-amber-700 shadow-sm font-sans"
+        >
+          Buy via Square Checkout &rarr;
+        </a>
+      )}
+    </div>
+  </div>
+</div>
